@@ -28,7 +28,7 @@ Example Results
 
 - **To test your images** (after downloading the model)  
 ```python
-  python run_v3.py \[-h\] -i IMAGE \[-r ROTATION\] \[-md MINDIM_SIZE\] \[-n N_EXPANSIONS\]
+  python run_v3.py [-h] -i IMAGE [-r ROTATION] [-md MINDIM_SIZE] [-n N_EXPANSIONS]
 
   optional arguments:  
   -h, --help            show this help message and exit  
