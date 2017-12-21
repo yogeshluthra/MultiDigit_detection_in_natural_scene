@@ -27,6 +27,7 @@ Example Results
   - ./trained_models/multi_digit_classifier_FullyTrainVGG16_ReducedNetwork_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.h5
 
 - **To test your images** (after downloading the model)  
+```python
   python run_v3.py \[-h\] -i IMAGE \[-r ROTATION\] \[-md MINDIM_SIZE\] \[-n N_EXPANSIONS\]
 
   optional arguments:  
@@ -40,7 +41,7 @@ Example Results
                         width or height)  
   -n N_EXPANSIONS, --n_expansions N_EXPANSIONS  
                         number of box size expansions to be applied  
-
+```
 
 **References**:
 [1] "Multi-Digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks" Goodfellow et al. 2014  
