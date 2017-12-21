@@ -15,15 +15,6 @@ from PreProcessing import image_preprocessings as PreProcImg
 # from utilities import segmentation
 from utilities import localization_n_detection as LocDet
 
-# Some pre-reqs and assumptions
-input_shape=(32,32,3)
-num_classes=11
-max_recognizable_digits = 5
-
-# Load Network
-from keras.models import load_model
-model = load_model('./trained_models/multi_digit_classifier_FullyTrainVGG16_ReducedNetwork_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.h5')
-
 # Test images
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required = True, help = "Path to the image")
@@ -40,12 +31,23 @@ args = vars(ap.parse_args())
 #             'house14.jpg': {'rotation': 0, 'minDim_size' : 150, 'n_expansions' : 0},
 #             }
 
+test_file = args.get('image')
+rotation = 0 if args.get('rotation') is None else args.get('rotation')
+minDim_size = 300 if args.get('minDim_size') is None else args.get('minDim_size')
+n_expansions = 0 if args.get('n_expansions') is None else args.get('n_expansions')
+print(rotation, minDim_size, n_expansions)
+
+# Some pre-reqs and assumptions
+input_shape=(32,32,3)
+num_classes=11
+max_recognizable_digits = 5
+
+# Load Network
+from keras.models import load_model
+model = load_model('trained_models/multi_digit_classifier_FullyTrainVGG16_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.h5')
+
 # Digits: Localization and Detection
 starttime=time()
-test_file = args.get('image')
-rotation = args.get('rotation', 0)
-minDim_size = args.get('minDim_size', 300)
-n_expansions = args.get('n_expansions', 0)
 test_image = cv2.imread(test_file, 1)
 # - Rotating
 if rotation!=0: test_image = PreProcImg.rotate_image(test_image, rotation)
