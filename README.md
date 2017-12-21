@@ -1,9 +1,11 @@
 ### Multi Digit Detection Natural Scene
 
-#### Following architecture was used (based on VGG16 and Goodfellow et al 2014)
-![Architecture](images/architecture.png "Architecture")
+#### Following architecture was used (based on Goodfellow et al 2014 [1] and VGG16 [2] )
+![Architecture](images/architecture.png "Architecture")  
 
-
+- Final Report on this project can be found in this repo  
+  - [Final_Report.pdf](https://github.com/yogeshluthra/MultiDigit_detection_in_natural_scene/blob/master/Final_Report.pdf)  
+    - This report has links to the presentation video and demo video
 
 **Implementation** worked well on most images tested.  
 Example Results  
@@ -12,10 +14,6 @@ Example Results
 
 - All training steps could be seen in Train_FullyTrainVGG16_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.ipynb
 
-- Final Report on this project should be found in this folder, with name:
-  - Final_Report.pdf
-    - This report has links to the presentation video and demo video
-
 - The full environment, in which this project was developed could be found in:
   - requirements.txt
 
@@ -23,10 +21,7 @@ Example Results
   - But it can downloaded from [this link](https://1drv.ms/u/s!Ai_USJWaRTc6iIBOkYyNdMkYSvMqLA)
     - After download, this should be placed as ./trained_models/multi_digit_classifier_FullyTrainVGG16_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations
 
-- The model is included with this submission. It should be found at:
-  - ./trained_models/multi_digit_classifier_FullyTrainVGG16_ReducedNetwork_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.h5
-
-- **To test your images** (after downloading the model)  
+- **To test your own images** (after downloading the model)  
 ```python
   python run_v3.py [-h] -i IMAGE [-r ROTATION] [-md MINDIM_SIZE] [-n N_EXPANSIONS]
 
