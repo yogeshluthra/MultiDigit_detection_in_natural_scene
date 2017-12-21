@@ -3,8 +3,10 @@
 #### Following architecture was used (based on VGG16 and Goodfellow et al 2014)
 ![Architecture](images/architecture.png "Architecture")
 
-**Implementation** worked well on most images tested.
-E.g. Result
+
+
+**Implementation** worked well on most images tested.  
+Example Results  
 ![Test Output](images/Final_Results.png "A Test Output")
 
 
@@ -24,7 +26,21 @@ E.g. Result
 - The model is included with this submission. It should be found at:
   - ./trained_models/multi_digit_classifier_FullyTrainVGG16_ReducedNetwork_Dataset1_2xCrops_AugmentedWithFalseImages_withRandomRotations.h5
 
-- images can be passed as run_v3.py -i \<image file\>
+- **To test your images** (after downloading the model)  
+  python run_v3.py \[-h\] -i IMAGE \[-r ROTATION\] \[-md MINDIM_SIZE\] \[-n N_EXPANSIONS\]
+
+  optional arguments:  
+  -h, --help            show this help message and exit  
+  -i IMAGE, --image IMAGE  
+                        Path to the image  
+  -r ROTATION, --rotation ROTATION  
+                        Rotation to be applied to image  
+  -md MINDIM_SIZE, --minDim_size MINDIM_SIZE  
+                        max pixel limit on minimum dimension of image (whether  
+                        width or height)  
+  -n N_EXPANSIONS, --n_expansions N_EXPANSIONS  
+                        number of box size expansions to be applied  
+
 
 **References**:
 [1] "Multi-Digit Number Recognition from Street View Imagery using Deep Convolutional Neural Networks" Goodfellow et al. 2014  
